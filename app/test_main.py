@@ -6,6 +6,7 @@ from app.main import get_human_age
 @pytest.mark.parametrize(
     "cat_age,dog_age,expected",
     [
+        (-1, -1, [0, 0]),
         (0, 0, [0, 0]),
         (14, 14, [0, 0]),
         (15, 15, [1, 1]),
@@ -16,6 +17,7 @@ from app.main import get_human_age
         (100, 100, [21, 17]),
     ],
     ids=[
+        "negative age",
         "zero age",
         "below first threshold",
         "first threshold",
